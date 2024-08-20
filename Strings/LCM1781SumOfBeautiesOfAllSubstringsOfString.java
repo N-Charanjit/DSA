@@ -1,4 +1,4 @@
-class LCM1781SumOfBeautiesOfAllSubstringsOfString{
+class LCM1781SumOfBeautiesOfAllSubstringsOfString {
     // int calculateBeauty(String str){
     //     int[] hashArray = new int[26];
     //     for(int i=0;i<str.length();i++){
@@ -24,6 +24,7 @@ class LCM1781SumOfBeautiesOfAllSubstringsOfString{
         return maxFreq - minFreq;
     }
     public int beautySum(String s) {
+        // TC->O(n^2) , SC->O(n)
         int len = s.length();
         int ans = 0;
         for(int size=3;size<=len;size++){

@@ -56,6 +56,7 @@ class DeleteAndInsertionOpsInLinkedList{
             cnt++;
             if(cnt==k){
                 prev.next  = temp.next;  // (or) prev.next = prev.next.next;
+                // temp.next = null;
                 break;
             }
             prev = temp;
@@ -86,8 +87,8 @@ class DeleteAndInsertionOpsInLinkedList{
     }
     // Inserting an element at head TC->O(1);
     static Node InsertAtHead(Node head, int val){
-        Node temp = new Node(val, head);
-        return temp ;
+        Node newHead = new Node(val, head);
+        return newHead ;
     }
     //Inserting an element at tail TC->O(n)
     static Node InsertAtTail(Node head, int val){

@@ -77,7 +77,7 @@ class DeletionAndInsertionOpsInDLL{
             cnt++;
             if(cnt==k) break;
             temp = temp.next;
-        } // Now temp will be pointing to kth node.
+        } // Now temp will be pointing to kth element (or) node.
         Node front = temp.next;
         Node prev = temp.back;
 
@@ -166,7 +166,7 @@ class DeletionAndInsertionOpsInDLL{
         return head;
     }
 
-    // Inserting before Give Node of DLL  : TC->O(n)
+    // Inserting before Give Node of DLL  : TC->O(1)
     static void insertBeforeGivenNode(Node nd, int val){
         Node prev = nd.back;
         Node newNode = new Node(val, nd,prev);

@@ -153,13 +153,13 @@ class DeleteAndInsertionOpsInLinkedList{
 
         // head = DeleteHead(head);     // 12->6->8
         // head = DeleteTail(head);     // 5->12->6
-        // head = DeleteKthElement(head,3); // 5->12->8
+        head = DeleteKthElement(head,3); // 5->12->8
         // head = DeleteGivenElement(head,12);   // 5->6->8
 
         // head = InsertAtHead(head, 21);  // 21->5->12->6->8
         // head = InsertAtTail(head,35);    // 5->12->6->8->35
         // head = InsertAtKthPlace(head,17,3);  // 5->12->17->6->8
-           head = InsertValueBeforeGivenElement(head,23,6); // 5->12->23->6->8
+        //    head = InsertValueBeforeGivenElement(head,23,6); // 5->12->23->6->8
         print(head);
     }
 }

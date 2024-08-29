@@ -23,7 +23,7 @@ class LCE234CheckIfGivenLLIsPalindrome {
     }
     
     public boolean isPalindrome(ListNode head) {
-        // Optimal : TC->O(n/2 + n/2 + n/2 + n/2) = O(2N) = O(N) (approximation) , SC->O(1)
+        // Optimal : TC->O( n/2 + n/2 + n/2 + n/2 ) = O(2N) = O(N) (approximation) , SC->O(1)
         if(head==null || head.next==null) return true;
         ListNode slow = head;
         ListNode fast =head;

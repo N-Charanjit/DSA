@@ -11,9 +11,9 @@
 class LCM2AddTwoLinkedLists {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // TC->O(max(size of l1, size of l2))
-        // SC-> O(1) : Taking space of O(max(size of l1, size of l2)) to return result no extra space is used to solve the problem.
-        ListNode dummy = new ListNode(); 
-        ListNode temp = dummy; 
+        // SC-> O(1) {Taking space of O(max(size of l1, size of l2)) to return result no extra space is used to solve the problem.}
+        ListNode dummyNode = new ListNode(-1); 
+        ListNode temp = dummyNode; 
         int carry = 0;
         while( l1 != null || l2 != null) {
             int sum = 0; 
@@ -33,14 +33,13 @@ class LCM2AddTwoLinkedLists {
             temp.next = nd; 
             temp = temp.next; 
         }
-        if(carry!=0){
-            ListNode nd = new ListNode(carry);
-            temp.next = nd;
+
+        if(carry != 0){
+            ListNode nd = new ListNode(carry); 
+            temp.next = nd; 
         }
-        return dummy.next;
+
+        return dummyNode.next;
         
     }
-
-        
-    
 }

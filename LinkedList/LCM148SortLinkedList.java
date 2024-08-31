@@ -8,62 +8,65 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class LCM148SortLinkedList{
-
-    public ListNode mergeTwoLists(ListNode a, ListNode b) {
-        if (a == null)
-            return b;
-        if (b == null)
-            return a;
-        ListNode head = null, tail = null;
-        if (a.val <= b.val) {
-            head = tail = a;
-            a = a.next;
-        } else {
-            head = tail = b;
-            b = b.next;
-        }
-        while (a != null && b != null) {
-            if (a.val <= b.val) {
-                tail.next = a;
-                tail = a;
-                a = a.next;
-            } else {
-                tail.next = b;
-                tail = b;
-                b = b.next;
-            }
-        }
-        if (a == null) {
-            tail.next = b;
-        } else {
-            tail.next = a;
-        }
-        return head;
-    }
-
-    public ListNode findMid(ListNode head) {
-        ListNode slow = head, fast = head.next;
-        while (fast != null && fast.next != null) {
+class Solution {
+    ListNode findMiddle(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
     }
 
+    ListNode mergeTwoLL(ListNode headL, ListNode headR){
+        ListNode dummyNode = new ListNode(-1);
+        ListNode temp = dummyNode;
+        while(headL != null && headR != null){
+            if(headL.val < headR.val){
+                temp.next = headL;
+                temp = headL;
+                headL = headL.next;
+            }
+            else{
+                temp.next = headR;
+                temp = headR;
+                headR = headR.next;
+            }
+        }
+        if(headL != null) temp.next = headL;
+        else temp.next = headR;
+        return dummyNode.next;
+    }
     public ListNode sortList(ListNode head) {
-        if (head == null || head.next == null)
-            return head;
+        //Optimal : Using Merge Sort concept (Divide and Conquer)
+        // TC-> O((n+n/2) * logn)   
+        // SC-> O(logn) If we consider the recursion stack space. Depth of the recursion tree is O(log n) because each recursive call splits the list into halves, which results in a logarithmic number of levels of recursion. If we neglect this then SC->O(1) 
+        if(head == null || head.next == null) return head;
+        ListNode middle  = findMiddle(head);  // O(n/2)
+        ListNode leftHead = head;
+        ListNode rightHead = middle.next;
+        middle.next = null;
 
-        ListNode mid = findMid(head);
-        ListNode left = head;
-        ListNode right = mid.next;
-        mid.next = null;
+        leftHead = sortList(leftHead);
+        rightHead = sortList(rightHead);
+        return mergeTwoLL(leftHead, rightHead);    // O(n)
 
-        left = sortList(left);
-        right = sortList(right);
 
-        ListNode res = mergeTwoLists(left, right);
-        return res;
+        // Brute Force : TC->O(nlogn) , SC->O(n)
+        // List<Integer> ls = new ArrayList<>();
+        // ListNode temp = head;
+        // while(temp != null){
+        //     ls.add(temp.val);
+        //     temp = temp.next;
+        // }
+        // Collections.sort(ls);
+        // temp = head;
+        // for(int i = 0; i < ls.size(); i++){
+        //     temp.val = ls.get(i); 
+        //     temp = temp.next; 
+        // }
+        // return head; 
+         
     }
 }

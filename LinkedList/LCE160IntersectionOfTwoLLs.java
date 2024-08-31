@@ -18,7 +18,7 @@ public class LCE160IntersectionOfTwoLLs{
         while(tempA!=tempB){
             tempA = tempA.next;
             tempB = tempB.next;
-            if(tempA == tempB) return tempA;
+            if(tempA == tempB) return tempA;  // (or) return tempB;
             if(tempA==null) tempA = headB;
             if(tempB == null) tempB = headA;
         }

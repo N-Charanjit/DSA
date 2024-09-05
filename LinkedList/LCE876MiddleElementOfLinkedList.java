@@ -10,7 +10,7 @@
  */
 class LCE876MiddleElementOfLinkedList {
     public ListNode middleNode(ListNode head) {
-        //Slow and Fast pointer concept : TC-> O(n/2) {single pass}
+        //Slow and Fast pointer concept : TC-> O(n/2) {single pass}, SC->O(1)
         ListNode slow = head;
         ListNode fast = head;
         while(fast!=null && fast.next!=null){

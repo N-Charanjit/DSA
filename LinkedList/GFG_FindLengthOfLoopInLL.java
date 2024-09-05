@@ -11,7 +11,7 @@ class Node
 // Function should return the length of the loop in LL.
 
 class GFG_FindLengthOfLoopInLL {
-    // Function to find the length of a loop in the linked list.
+    // Optimal : TC->O(n) , SC->O(1)
     public int countNodesinLoop(Node head) {
         // Add your code here.
         Node slow = head;

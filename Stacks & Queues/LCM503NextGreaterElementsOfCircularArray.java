@@ -1,6 +1,6 @@
-class Solution{
-    public int[] LCM503NextGreaterElementsOfCircularArray(int[] nums) {
-        /* Optimaml : TC->O(4n) , SC->O(2n) + O(n)  {this n is for returing the answer we cant optimise this space as the problem statement is demanding to return array.}
+class LCM503NextGreaterElementsOfCircularArray{
+    public int[] NextGreaterElementsOfCircularArray(int[] nums) {
+        /* Optimal : TC->O(4n) , SC->O(2n) + O(n)  {this n is for returing the answer we cant optimise this space as the problem statement is demanding to return array.}
         */
         int n= nums.length;
         int nge[] = new int[n];

@@ -33,7 +33,7 @@ class Solution {
         return prev;
     }
     public ListNode LCH25ReverseKGroupInLL(ListNode head, int k) {
-        // Optimal Method 2: TC->O(N) , SC->O(1) 
+        // Optimal Method 2: TC->O(2N) , SC->O(1) 
         ListNode temp = head;
         ListNode prevLast = null;
         while(temp!=null){
@@ -53,7 +53,7 @@ class Solution {
         }
         return head;
 
-        // Optimal Method 1: TC->O(N) , SC->O(1)
+        // Optimal Method 1: TC->O(2N) , SC->O(1)
         // int cnt = 0;
         // ListNode left =  head;
         // ListNode right = head;

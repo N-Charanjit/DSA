@@ -10,7 +10,7 @@
  */
 class LCM61RotateLinkedList{
     //Optimal : TC->O(2N) , SC->O(1);
-    public ListNode rotateRight(ListNode head, int k) {
+    public ListNode rotateLinkedList(ListNode head, int k) {
         if(head==null || head.next == null ) return head;
         ListNode tail = head;
         int len = 1;
@@ -18,7 +18,7 @@ class LCM61RotateLinkedList{
             len++;
             tail = tail.next;
         }
-        if(k%len ==0 ) return head;
+        if(k%len ==0 ) return head;  // Implies K = length og LL.
 
         ListNode temp = head; 
         ListNode prev = null;

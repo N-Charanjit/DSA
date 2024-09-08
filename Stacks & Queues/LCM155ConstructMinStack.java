@@ -47,7 +47,7 @@ class LCM155ConstructMinStack {
     }
 
     
-    // Brute Force : SC->O(2N) (2 elements in each pair , N such pairs in our stack);
+    // Better : SC->O(2N) (2 elements in each pair , N such pairs in our stack);
 
     // Stack<Pair<Integer, Integer>> st;
 
@@ -78,7 +78,14 @@ class LCM155ConstructMinStack {
     //     return st.peek().getValue();
         
     // }
+    
+
+    // Brute Force : For getMin() method traverse and find the minimum. Takes TC->O(N) for getMin().
+
 }
+
+
+
 
 /**
  * Your MinStack object will be instantiated and called as such:

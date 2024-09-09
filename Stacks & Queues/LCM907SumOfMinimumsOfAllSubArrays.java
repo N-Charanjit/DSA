@@ -1,5 +1,5 @@
 class LCM907SumOfMinimumsOfAllSubArrays {
-    // Optimal (Monotonic Stack) : TC->O(5n)=O(n)(approx) , SC->O(4n)=O(n)(approx)
+    
     int[] findNSE(int[] arr){
         Stack<Integer> st = new Stack<>();
         int n = arr.length;
@@ -29,6 +29,7 @@ class LCM907SumOfMinimumsOfAllSubArrays {
         return psee;
     }
     public int sumSubarrayMins(int[] arr) {
+        // Optimal (Monotonic Stack) : TC->O(5n)=O(n)(approx) , SC->O(4n)=O(n)(approx)
         int n = arr.length;
         int[] nse = findNSE(arr);
         int[] psee = findPSEE(arr);

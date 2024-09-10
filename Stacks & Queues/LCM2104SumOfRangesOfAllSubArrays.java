@@ -13,7 +13,7 @@ class LCM2104SumOfRangesOfAllSubArrays {
         }
         return nge;
     }
-    int[] findPGEE(int[] arr){
+    int[] findPGEE(int[] arr){       //previous greater or elqual element
         Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int[] pgee = new int[n];
@@ -41,7 +41,7 @@ class LCM2104SumOfRangesOfAllSubArrays {
         }
         return nse;
     }
-    int[] findPSEE(int[] arr){
+    int[] findPSEE(int[] arr){     //previous smaller or elqual element
         Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int[] psee = new int[n];

@@ -1,4 +1,7 @@
 class LCM901OnlineStockSpan {
+    // Optimal (using monotonic stack "pge" concept)
+    // Over All for all next() function calls  : TC-> O(2N) SC->O(N) {N -> number of next() function calls}
+
     Stack<Pair<Integer,Integer>> st;
     int index;
     public LCM901OnlineStockSpan() {
@@ -7,8 +10,6 @@ class LCM901OnlineStockSpan {
         
     }
     public int next(int price) {
-        // Optimal (using monotonic stack "pge" concept)
-        // Over All for all next() function calls  : TC-> O(2N) SC->O(N) {N -> number of next() function calls}
         index = index+1;
         while(!st.isEmpty()&& st.peek().getKey() <= price){
             st.pop();

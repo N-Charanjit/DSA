@@ -1,6 +1,6 @@
 class LCM901OnlineStockSpan {
     // Optimal (using monotonic stack "pge" concept)
-    // Over All for all next() function calls  : TC-> O(2N) SC->O(N) {N -> number of next() function calls}
+    // Over All for all next() function calls  : TC-> O(2N) SC->O(N) {N -> number of total next() function calls}
 
     Stack<Pair<Integer,Integer>> st;
     int index;
@@ -20,7 +20,7 @@ class LCM901OnlineStockSpan {
         return ans;
     }
 
-    /* Brute : Using ArrayLIist and for each next(0 call iterate through list to find)
+    /* Brute : Using ArrayLIist and for each next() call iterate through list to find the <= elements
     // For every next() call :  TC->O(No of days till now) , SC->O(No.of next() calls till now)
     ArrayList<Integer> ls;
 

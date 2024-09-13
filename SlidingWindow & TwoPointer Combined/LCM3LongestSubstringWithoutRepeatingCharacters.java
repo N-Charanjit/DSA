@@ -12,7 +12,7 @@ class Solution {
         // Optimal :(using two pointer and sliding window combined) 
         // TC-> O(n), SC->O(1)
         int[] hashArr = new int[256];   
-        Arrays.fill(hashArr,-1);           // tc->O(n)
+        Arrays.fill(hashArr,-1);           // tc->O(1) {O(256) = O(1)(approximation)}
         int len = s.length();
         int l =0, r=0;
         int maxLen =0;
@@ -32,7 +32,6 @@ class Solution {
 
         // Better : TC->O(n^2) and SC->O(1) {using same hash array of size 256 units same again and again}
         // int len = s.length();
-        // System.out.println(len);
         // int maxLen = 0;
         // for(int i=0;i<len;i++){
         //     int[] hashArr = new int[256];

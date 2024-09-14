@@ -13,6 +13,7 @@ class LCM424ReplaceToGetLongestRepeatingCharacter {
                 hashArr[s.charAt(left)-'A']--;
                 left++;
             }
+            // No need for updating the maxFreq take some example and dry run you get it.
             if((right-left+1) - maxFreq <= k){
                 maxLen = Math.max(maxLen , right-left+1); 
             }
@@ -32,8 +33,9 @@ class LCM424ReplaceToGetLongestRepeatingCharacter {
         //     maxFreq = Math.max(maxFreq, hashArr[s.charAt(right)-'A']);
         //    while( (right-left+1) - maxFreq > k){
         //         hashArr[s.charAt(left)-'A']--;
+
         //         maxFreq = 0;
-        //         for(int x=0;x<25;x++){  // T.C->O(26) 
+        //         for(int x=0;x<26;x++){  // T.C->O(26) 
         //             maxFreq = Math.max(maxFreq , hashArr[x]);
         //         }
                 
@@ -48,7 +50,7 @@ class LCM424ReplaceToGetLongestRepeatingCharacter {
 
 
 
-        // Brute : TC->O(N^2) , SC-> O(26) = O(1)(approximation) =>{constant space complexity}
+        // Better : TC->O(N^2) , SC-> O(26) = O(1)(approximation) =>{constant space complexity}
         // int n = s.length();
         // int maxLen = 0;
         // for(int i=0;i<n;i++){

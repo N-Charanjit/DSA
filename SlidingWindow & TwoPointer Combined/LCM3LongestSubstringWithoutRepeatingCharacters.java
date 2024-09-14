@@ -21,7 +21,6 @@ class Solution {
                 if( hashArr[s.charAt(r)] >= l ) { l = hashArr[s.charAt(r)] + 1; } 
                 
             }
-
             int substrLen = r-l+1;
             maxLen = Math.max(maxLen , substrLen);
 

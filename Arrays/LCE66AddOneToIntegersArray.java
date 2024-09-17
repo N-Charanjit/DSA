@@ -1,4 +1,4 @@
-class SLCE66AddOneToIntegersArrayolution {
+class LCE66AddOneToIntegersArray {
     // TC->O(2n)=O(n)(approximation) , SC->O(n) {used to return the answer not to solve the problem}
     public int[] plusOne(int[] digits) {
         int n = digits.length;

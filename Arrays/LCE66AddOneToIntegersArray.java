@@ -10,18 +10,15 @@ class LCE66AddOneToIntegersArray {
                 break;
             }
         }
-
         int[] ans = new int[ansSize];
         if(ansSize == n+1){
             ans[0] = 1;
             return ans;
         }
-
         for(int i=n-1;i>=0;i--){
             ans[i]= (digits[i]+carry) %10;
             carry = (digits[i]+carry) / 10;
         }
-
         return ans;
         
     

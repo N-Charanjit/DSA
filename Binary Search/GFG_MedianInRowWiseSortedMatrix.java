@@ -14,8 +14,8 @@ class GFG_MedianInRowWiseSortedMatrix{
             
         }
         return ans;
-        
     }
+
     int countSmallEqual(int[][] mat, int val){
         int cnt = 0;
         int R = mat.length;
@@ -24,6 +24,7 @@ class GFG_MedianInRowWiseSortedMatrix{
         }
         return cnt;
     }
+    
     int median(int matrix[][], int R, int C) {
         // Code Here
         // TC - > O( log(array's max element - array's min element) * R * log(C)  )  , SC->O(1) ( where: R-> no.of rows, C-> no.of col's)

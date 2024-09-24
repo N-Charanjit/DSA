@@ -1,20 +1,44 @@
 class LCH992SubarraysWithKDifferentIntegers {
-     public int subarraysWithKDistinct(int[] nums, int K) {
-        int[] numFreq = new int[nums.length+1];
-        int distinct = 0, start = 0, minEnd = 0, total = 0;
-        while (distinct == K || minEnd < nums.length) {
-            while (distinct < K && minEnd < nums.length) 
-			    if (numFreq[nums[minEnd++]]++ == 0) 
-                distinct++;
-            int maxEnd = minEnd;
-            while (maxEnd < nums.length && numFreq[nums[maxEnd]] > 0)
-			    maxEnd++;
-            while (distinct == K) {
-                if (numFreq[nums[start++]]-- == 1)
-                distinct--;
-                total += (maxEnd - minEnd + 1);
+    // This function returns the total no.of subarrays having number of different integers <= k 
+    int func(int[] nums,int k){    // TC->O(2N) , SC->O(N){using Map}
+        int n= nums.length;
+        int l=0,r=0;
+        int cnt = 0;
+        Map<Integer,Integer> map = new HashMap<>();
+
+        while(r<n){
+            map.put(nums[r],map.getOrDefault(nums[r],0)+1);
+            while(map.size() > k){
+                map.put(nums[l],map.get(nums[l])-1);
+                if(map.get(nums[l]) == 0) map.remove(nums[l]);
+                l++;
             }
+            cnt = cnt + (r-l+1); 
+            r++;
         }
-        return total;
+        return cnt;
     }
- }
+    
+    public int subarraysWithKDistinct(int[] nums, int k) {
+        
+        // Optimal : (variable Sliding window using two pointers and sliding window combined) 
+        // TC->(2*(2N))=O(4N) , SC->O(2N)
+        return func(nums,k) - func(nums,(k-1));
+        
+
+        // Brute Force : TC->O(n^2) , SC->O(N)
+        // int n = nums.length;
+        // int cnt = 0;
+        // for(int i=0;i<n;i++){
+        //     Map<Integer,Integer> map = new HashMap<>();
+        //     for(int j=i;j<n;j++){
+        //         map.put(nums[j],1);
+        //         if(map.size()==k){
+        //             cnt++;
+        //         }
+        //         else if(map.size()>k) break;
+        //     }
+        // }
+        // return cnt;
+    }
+}

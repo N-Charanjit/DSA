@@ -21,7 +21,7 @@ class LCM424ReplaceToGetLongestRepeatingCharacter {
         }
         return maxLen;
 
-        // Optimal 1 : TC->O((n+n)*26) =O((2n)*26) = O(52*n)
+        // Optimal 1 : TC->O((n+n)*26) =O((2n)*26) = O(52*n) = O(n) (approximation for large values of n)
         // SC-> O(26) = O(1)(approximation) =>{constant space complexity}
         // int n =s.length();
         // int left=0,right=0;

@@ -1,4 +1,4 @@
-class Solution {
+class LCM3LongestSubstringWithoutRepeatingCharacters {
     // boolean haveRepeatedCharacters(String str){
     //     int[] hashArr = new int[256];
     //     for(int i=0;i<str.length();i++){
@@ -9,10 +9,10 @@ class Solution {
     // }
     public int lengthOfLongestSubstring(String s) {
 
-        // Optimal :(using two pointer and sliding window combined) 
+        // Optimal :(using two pointer and sliding windoow combined) 
         // TC-> O(n), SC->O(1)
         int[] hashArr = new int[256];   
-        Arrays.fill(hashArr,-1);           // tc->O(1) {O(256) = O(1)(approximation)}
+        Arrays.fill(hashArr,-1);           // tc->O(n)
         int len = s.length();
         int l =0, r=0;
         int maxLen =0;
@@ -21,6 +21,7 @@ class Solution {
                 if( hashArr[s.charAt(r)] >= l ) { l = hashArr[s.charAt(r)] + 1; } 
                 
             }
+
             int substrLen = r-l+1;
             maxLen = Math.max(maxLen , substrLen);
 
@@ -29,8 +30,9 @@ class Solution {
         }
         return maxLen;
 
-        // Better : TC->O(n^2) and SC->O(1) {using same hash array of size 256 units same again and again}
+        // Better : TC->O(n^2) and SC->O(1) {using same hash array of size 256 units again and again}
         // int len = s.length();
+        // System.out.println(len);
         // int maxLen = 0;
         // for(int i=0;i<len;i++){
         //     int[] hashArr = new int[256];
@@ -42,7 +44,7 @@ class Solution {
         // }
         // return maxLen;
         
-        // Brute: TC->O(n^3) , SC->O(1) {using same hash array of size 256 units same again and again}
+        // Brute: TC->O(n^3) , SC->O(1) 
         // int len = s.length();
         // int maxLen = 0;
         // for(int i=0;i<len;i++){

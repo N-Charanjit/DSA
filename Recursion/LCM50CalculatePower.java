@@ -1,4 +1,4 @@
-class LCM50calPower(x,n) {
+class LCM50CalculatePower{
     double calPower(double x, long m){
         System.out.println(x +" "+m);
         if(m==0) return 1.0;

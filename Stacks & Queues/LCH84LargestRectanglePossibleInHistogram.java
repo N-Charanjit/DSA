@@ -30,7 +30,7 @@ class LCH84LargestRectanglePossibleInHistogram {
     // }
 
     public int largestRectangleArea(int[] heights) {
-         // Optimal : (No precomputation finding pse and nse arrays instead computer values while traversing )
+         // Optimal : (No precomputation finding pse and nse arrays instead compute values while traversing )
          // TC->O(2N) , SC->O(N)     
          int n = heights.length;
          Stack<Integer> st = new Stack<>();

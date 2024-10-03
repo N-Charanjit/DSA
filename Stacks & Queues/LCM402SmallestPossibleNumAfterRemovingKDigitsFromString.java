@@ -1,7 +1,7 @@
 class LCM402SmallestPossibleNumAfterRemovingKDigitsFromString {
 
     public String removeKdigits(String num, int k) {
-        /*Optimal : TC->O(3n+k) = O(n+k) (approx)  , SC->O(n)+O(n) {one O(n) is for stack and the othe ris for returning the ansewer not used for solving the problem}*/
+        /*Optimal : TC->O(3n+k) = O(n+k) (approx)  , SC->O(n)+O(n) {one O(n) is for stack and the other is for returning the ansewer not used for solving the problem}*/
         if(k == num.length()) return "0";
         Stack<Character> st = new Stack<>();
         int n = num.length();

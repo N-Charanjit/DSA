@@ -30,7 +30,8 @@ class LCH85LargestRectangleOfOnesPossibleInMatrix {
     public int maximalRectangle(char[][] matrix) {
         /*Optimal :(Using Leetcode 84. Largest Rectangle in Histogram concept)
           TC-> O(m * n) +  O(m * 2n)  = O(m * n)(aprox)
-          SC-> O(m * n) + O(m) = O(m * n) (approx)  { Used another matrix(prefixSum) to store values instead we can change the given input but not advisable to tamper the input in practice}
+          SC-> O(m * n) + O(n) = O(m * n) (approx)  { Used another matrix(prefixSum) to store values instead we 
+          can change the given input but not advisable to tamper the input in practice}
         */
 
         // precomputing the prefixsum 2D array

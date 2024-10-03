@@ -93,10 +93,9 @@ class LCM2104SumOfRangesOfAllSubArrays {
         // return sum;
 
 
-        //Brute : Finding minimums and summing for all the subarrays  
+        //Brute : Finding ranges(max - min) and summing for all the subarrays  
         // TC->O(n^3) , SC->O(1)
         // int n = nums.length;
-        // int modVal = (int)(1e9 + 7);
         // long sum = 0;
         // for(int i=0;i<n;i++){
         //     for(int j=i;j<n;j++){

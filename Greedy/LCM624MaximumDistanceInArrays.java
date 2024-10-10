@@ -1,6 +1,7 @@
  
 class LCM624MaximumDistanceInArrays {
     public int maxDistance(List<List<Integer>> arrays) {
+        
         //T.C -> O(n) , SC->O(1)
         int m = arrays.size();  // no.of lists in the list arrays
         int pastMin = arrays.get(0).get(0);

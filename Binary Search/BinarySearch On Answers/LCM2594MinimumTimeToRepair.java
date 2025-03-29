@@ -1,18 +1,21 @@
+/* 
+Intuition :  Binary Search On Answers
+When you come to a conclusion that we need to minimize the maximum of each case or the other way round like maximize the minimum of each case apply Binary Search on Answer that we need to find (Ex : Leetcode 2594 : Minimum Time to repair , We see that there are many possible distributions of cars among the mechanics and in each case we needed  the maximum time taken by mechanic and we need to minimize that at the end So here the answer we need to find is "time taken to repair" So apply Binary Search for finding time.
+*/
+
 // TC-> O(n * log K) k-> range of binary search = min(ranks)*(cars^2) - min(ranks)
 // SC->O(1)
 
-// Binary Search On Answers
-
-class LCM2594_MinimumTimeToRepair {
+class LCM2594MinimumTimeToRepair{
     public long repairCars(int[] ranks, int cars) {
+        int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for(int x :  ranks){
-            min =  Math.min(x, min);
+            min = Math.min(min, x);
+            max =  Math.max(max, x);
         }
-        
-        long low = min, high = min* (long)cars*cars;
+        long low = min, high = max* (long)cars*cars;
         long ans = 0;
-
         while(low<=high){
             long mid = low + (high-low)/2;
             if(isPossibleToRepair(mid,ranks,cars)){
@@ -22,16 +25,14 @@ class LCM2594_MinimumTimeToRepair {
             else{
                 low = mid+1;
             }
-
         }
         return ans;
-        
     }
     boolean isPossibleToRepair(long minutes, int[] ranks, int cars){
+        long carsFixed=0;
         for(int rank : ranks){
-            cars =  cars - (int)Math.sqrt(minutes/rank);
-            if(cars <=0) return true;
+            carsFixed =  carsFixed + (long)Math.sqrt(minutes/rank);
         }
-        return false;
+        return carsFixed>=cars;
     }
 }

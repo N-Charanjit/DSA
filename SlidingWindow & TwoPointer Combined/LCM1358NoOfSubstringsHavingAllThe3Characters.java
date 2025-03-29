@@ -18,7 +18,7 @@ class LCM1358NoOfSubstringsHavingAllThe3Characters {
         return cnt;
 
 
-        // Other Optimal : Storing near by indices that form a valid window(at least one a , b, c) 
+        // Other Optimal : Storing near by indices that form a valid window i.e., (at least one a & b & c) 
         // TC-> O(n) , SC->O(1) 
         int n = s.length();
         int[] lastSeenIndex = new int[3];
